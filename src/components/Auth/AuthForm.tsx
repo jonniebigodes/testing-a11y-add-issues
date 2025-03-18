@@ -31,7 +31,6 @@ const Label = styled.label`
   @media (force-colors: active) {
     color: WindowText;
   }
-  color: #f7f5f0;
 `
 
 const InputWrapper = styled.div`
@@ -56,7 +55,7 @@ const SubmitButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #007bff;
+  background-color: rgb(10, 46, 84);
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -66,7 +65,7 @@ const SubmitButton = styled.button`
     border: 4px solid #ccc;
     border-radius: 5px;
     transition: border 0.2s ease;
-    background-color: #0056b3;
+    background-color: rgb(10, 46, 84);
   }
 `
 
@@ -159,7 +158,6 @@ export const LoginForm: React.FC<{}> = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onFocus={(e) => console.log('focus', e.target)}
-            role="listitem"
             aria-describedby="login-status"
           />
         </InputWrapper>
@@ -176,14 +174,11 @@ export const LoginForm: React.FC<{}> = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             onFocus={(e) => console.log('focus', e.target)}
-            role="alertdialog"
             aria-describedby="login-status"
           />
         </InputWrapper>
       </InputWithTooltip>
-      <SubmitButton type="submit" aria-hidden>
-        Login
-      </SubmitButton>
+      <SubmitButton type="submit">Login</SubmitButton>
       <ErrorMessage visible={true} id="login-status" aria-live="off">
         Invalid email or password. Check the email and password requirements and try again.
       </ErrorMessage>
